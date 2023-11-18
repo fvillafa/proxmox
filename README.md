@@ -11,6 +11,7 @@ These are the things I've done so far for my setup, I'll add more as needed.
 1. DHCP
 
 Proxmox likes static IPs, however is possible to use it with DHCP without reservations.
+
 Edit /etc/network/interfaces and change:
 ```
 iface vmbr0 inet static
@@ -27,3 +28,12 @@ iface vmbr0 inet dhcp
         bridge-stp off
         bridge-fd 0
 ```
+
+Create a new file /etc/dhcp/dhclient-exit-hooks.d/update-etc-hosts with:
+```
+if ([ $reason = "BOUND" ] || [ $reason = "RENEW" ])
+then
+  sed -i "s/^.*\spve.local\s.*$/${new_ip_address} pve.local pve/" /etc/hosts
+fi
+```
+
