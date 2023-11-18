@@ -46,5 +46,5 @@ Comment all the enterprise repositories if listed in sources.list or under sourc
 # PVE pve-no-subscription repository provided by proxmox.com
 deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription
 ```
-
+NOTE: Replace bookworm for the corresponding Debian version, if needed.
 
