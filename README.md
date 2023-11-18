@@ -8,7 +8,7 @@ Configuring Proxmox for WLAN is hard to do it (Or so they say) Ref: https://pve.
 
 These are the things I've done so far for my setup, I'll add more as needed.
 
-1. DHCP
+## 1. DHCP
 
 Proxmox likes static IPs, however is possible to use it with DHCP without reservations.
 
@@ -38,7 +38,7 @@ fi
 ```
 NOTE: The entry MUST exist previously, the hook WON'T create it. Of course pve.local is my system, you need to replace names accordingly.
 
-2. Repositories
+## 2. Repositories
 
 Although it can be used for free, Proxmox has a subscription licensing model.
 Comment all the enterprise repositories if listed in sources.list or under sources.list.d and add this one:
