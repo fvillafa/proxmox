@@ -36,4 +36,15 @@ then
   sed -i "s/^.*\spve.local\s.*$/${new_ip_address} pve.local pve/" /etc/hosts
 fi
 ```
+NOTE: The entry MUST exist previously, the hook WON'T create it. Of course pve.local is my system, you need to replace names accordingly.
+
+2. Repositories
+
+Although it can be used for free, Proxmox has a subscription licensing model.
+Comment all the enterprise repositories if listed in sources.list or under sources.list.d and add this one:
+```
+# PVE pve-no-subscription repository provided by proxmox.com
+deb http://download.proxmox.com/debian/pve bookworm pve-no-subscription
+```
+
 
